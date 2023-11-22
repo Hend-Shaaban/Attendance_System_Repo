@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AttendanceSystemFinal.Models.AttendanceViewModel>
+
+
+
+
+    <div class="container-fluid">
+        <div class="card mb-4">
+            <div class="card-header"><i class="fas fa-table mr-1"></i>All Students Attendances</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable"  cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>On Time</th>
+                                <th>Late</th>
+                                <th>Absent</th>
+                                <th>Permessions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           @foreach (var i in Model)
+                           {
+
+                            <tr>
+
+                                <td>
+
+                                    @i.stdname
+                                </td>
+                                <td>
+
+                                    @i.ontime
+                                </td>
+                                <td>
+
+                                    @i.late
+                                </td>
+                                <td>
+
+                                    @i.absent
+                                </td>
+                                <td>
+
+                                    @i.permission
+                                </td>
+                            </tr>
+
+                           }
+                        </tbody>
+                    </table>
+
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="sb-nav-link-icon">
+            <i class="fas fa-chart-area"></i>
+            @Html.ActionLink("Hello " + User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { @class = "nav-link" })
+        </div>
+
+        <a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">
+            <div class="sb-nav-link-icon">
+                <i class="fas fa-chart-area"></i>
+            </div>
+            Log off
+        </a>
+        if (User.IsInRole("Admin"))
+        {
+        <div class="sb-nav-link-icon">
+            <i class="fas fa-chart-area"></i>
+            @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "nav-link" })
+        </div>
+                    }
+                }
+            }
+            else
+            {
+
+
+
+        <div class="sb-nav-link-icon">
+            <i class="fas fa-table"></i>
+            @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "nav-link" })
+        </div>
+
+}

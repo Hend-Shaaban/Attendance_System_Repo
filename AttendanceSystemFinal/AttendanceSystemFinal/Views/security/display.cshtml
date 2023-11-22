@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AttendanceSystemFinal.Models.Student>
+@{
+    ViewBag.Title = "display";
+}
+
+<h2>display</h2>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>age</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.stdId</td>
+                    <td>@item.stdName</td>
+                    <td>@item.DeptNo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

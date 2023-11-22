@@ -1,0 +1,40 @@
+﻿
+
+@model List<AttendanceSystemFinal.Models.Student>
+
+<div class="container-fluid">
+<div class="card mb-4">
+    <div class="card-header"><i class="fas fa-table mr-1"></i>All Students</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable"  cellspacing="0">
+                <thead>
+                    <tr>
+    
+                        <th>student name</th>
+                        <th>student state</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+             @foreach (var item in Model)
+            {
+
+
+                        <tr>
+                            <td>@item.stdName</td>
+                            <td>@Html.ActionLink("attend", "copy", "security", new { Id = item.stdId }, new { @class = "btn btn-success" })</td>
+                        </tr>
+
+         }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+    </div>
+
+   
+
+

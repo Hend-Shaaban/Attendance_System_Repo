@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "showStd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Ajax.BeginForm("getStudentsdata", "admin", new AjaxOptions() { UpdateTargetId = "show", HttpMethod = "Get" }))
+{
+    
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                <h1 class="mt-4">View students Attendance</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="/Home/index">Home</a></li>
+                    <li class="breadcrumb-item active">students Attendance</li>
+                </ol>
+                <div class="card mb-4">
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            @Html.Label("Department name", new { @class = "lg mb-1" })
+
+                            @Html.DropDownList("id", ViewBag.id as SelectList, "--select Department--", new { @class = "btn btn-danger dropdown-toggle form - control py - 4" })
+
+                            <div class="col-md-3">
+
+                                @Html.Label("Enter Date", new { @class = "lg mb-1" })
+                                @Html.TextBox("EnterDate", null, new { @class = "form-control datapiker", id = "start", placeholder = "Date" })
+                            </div>
+
+                        </div>
+
+                            <button class="btn btn-primary" type="submit">View</button>
+
+                        </div>
+
+                    </div>
+                </div>
+          
+        </main>
+        </div>
+    
+}
+<div id="show">
+
+</div>
+
+@section Scripts {
+
+    <script type="text/javascript">
+        $(function () {
+            $(".datapiker").datetimepicker({
+                dateFormat: "yy-mm-dd",
+                timeFormat: "hh:mm:ss"
+            });
+        });
+
+    </script>
+
+}
+

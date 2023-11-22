@@ -1,0 +1,61 @@
+﻿@model AttendanceSystemFinal.Models.PermissionModel
+@using (Html.BeginForm("submitpermissions", "Admin"))
+{
+
+    <div class="container-fluid">
+        <div class="card mb-4">
+            <div class="card-header"><i class="fas fa-table mr-1"></i>All Students Permissions</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>student id</th>
+                                <th>student name</th>
+                                <th>date</th>
+                                <th>note</th>
+                                <th>status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.permissions.Count; i++)
+                            {
+
+                                <tr>
+                                    <td>@Model.permissions[i].id</td>
+                                    <td>@Model.permissions[i].stdId</td>
+                                    <td>@ViewBag.students[i].stdName</td>
+                                    <td>@Model.permissions[i].date</td>
+                                    <td>@Model.permissions[i].note</td>
+
+                                    <td>
+                                        @Html.CheckBoxFor(model => model.permissions[i].accepted)
+                                        @Html.Label("accepte")
+                                        @Html.HiddenFor(model => model.permissions[i].id)
+                                        @Html.HiddenFor(model => model.permissions[i].stdId)
+                                        @Html.HiddenFor(model => model.permissions[i].date)
+                                        @Html.HiddenFor(model => model.permissions[i].note)
+
+                                        @Html.CheckBoxFor(model => model.permissions[i].refused)
+                                        @Html.Label("refuse")
+
+
+                                    </td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+

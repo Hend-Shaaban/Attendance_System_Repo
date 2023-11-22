@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Ajax.BeginForm("showpermissions", "Admin", new AjaxOptions() { UpdateTargetId = "div1", HttpMethod = "Get" }))
+{
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                <h1 class="mt-4">View Permissions</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="/Home/index">Home</a></li>
+                    <li class="breadcrumb-item active">Permissions</li>
+                </ol>
+                <div class="card mb-4">
+                    <div class="card-body">
+
+                        <div class="form-group">
+                            @Html.Label("Department name", new { @class = "lg mb-1" })
+
+                            @Html.DropDownList("id", ViewBag.id as SelectList, "--select Department--", new { @class = "btn btn-danger dropdown-toggle form - control py - 4" })
+
+                            <button class="btn btn-primary" type="submit">View</button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+}
+<div id="div1">
+
+</div>

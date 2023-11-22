@@ -1,0 +1,24 @@
+MVC Project Accounts:
+------------------------
+Admin:
+asmaa@Admin.com
+1234As#
+-------------------
+Security:
+mohamed@Secureity.com
+1234Mo#
+-------------------
+Students:
+-------------
+aya3@Student.com
+1234Ayaf#
+------------
+sara5@Student.com
+1234Saraa#
+------------
+ahmed2@Student.com
+1234Ahmedg#
+-------------
+aya1@Student.com
+1234Ayag#
+

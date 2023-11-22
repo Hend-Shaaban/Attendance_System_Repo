@@ -1,0 +1,41 @@
+﻿@model AttendanceSystemFinal.Models.Attendance
+
+<div class="container-fluid">
+    <div class="card mb-4">
+        <div class="card-header"><i class="fas fa-table mr-1"></i>My Attendance</div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>student name</th>
+                            <th>date</th>
+                            <th>Attend time</th>
+                            <th>Exit Time</th>
+                            <th>Status</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                               
+                                <td>@Model.id</td>
+                                <td>@ViewBag.stdname</td>
+                                <td>@Model.date</td>
+                                <td>@Model.attTime</td>
+                                <td>@Model.exitTime</td>
+                                <td>@ViewBag.status</td>
+
+                               </tr>
+                  
+                    </tbody>
+                </table>
+
+              
+            </div>
+        </div>
+    </div>
+</div>
+
